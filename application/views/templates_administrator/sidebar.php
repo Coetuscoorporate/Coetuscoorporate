@@ -37,13 +37,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>My Tools</span>
+                    <span>Akademik</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Sub-Menu My Tools :</h6>
+                        <h6 class="collapse-header">Sub-Menu Akademik :</h6>
                         <a class="collapse-item" href="buttons.html">Jurusan</a>
-                        <a class="collapse-item" href="cards.html">Kelompok</a>
+                        <a class="collapse-item" href="<?php echo base_url('administrator/kelompok') ?>">Kelompok</a>
                         <a class="collapse-item" href="buttons.html">Mentoring</a>
                         <a class="collapse-item" href="cards.html">Mentee</a>
                         <a class="collapse-item" href="buttons.html">Tahun Periode</a>
