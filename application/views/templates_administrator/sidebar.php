@@ -9,7 +9,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-10">
-                    <i class="fas fa-university"></i>
+                    <i class="fas fa-mosque"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Ruang Hijrah</div>
             </a>
@@ -42,7 +42,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Sub-Menu My Tools :</h6>
-                        <a class="collapse-item" href="buttons.html">Jurusan</a>
+                        <a class="collapse-item" href="<?php echo base_url('administrator/jurusan') ?>">Jurusan</a>
                         <a class="collapse-item" href="cards.html">Kelompok</a>
                         <a class="collapse-item" href="buttons.html">Mentoring</a>
                         <a class="collapse-item" href="cards.html">Mentee</a>
@@ -113,7 +113,7 @@
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="<?php echo base_url('administrator/auth/logout') ?>">
                     <i class="fas fa-fw fa-sign-out-alt"></i>
                     <span>Logout</span></a>
             </li>
@@ -122,17 +122,9 @@
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            
 
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="<?php echo base_url() ?>assets/img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
+            
 
         </ul>
         <!-- End of Sidebar -->
