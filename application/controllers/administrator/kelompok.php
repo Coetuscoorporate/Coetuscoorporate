@@ -4,8 +4,7 @@ class Kelompok extends CI_Controller{
 
     public function index()
     {
-        $data['kelompok'] = $this->kelompok_model->tampil_data('kelompok')
-        ->result();
+        $data['kelompok'] = $this->kelompok_model->tampil_data('kelompok')->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/kelompok',$data);
@@ -13,10 +12,14 @@ class Kelompok extends CI_Controller{
 
     }
 
+   
+
+    
+    
+
     public function tambah_kelompok()
     {
-        $data['jurusan'] = $this->kelompok_model->tampil_data('jurusan')
-        ->result();
+        $data['jurusan'] = $this->kelompok_model->tampil_data('jurusan')->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/kelompok_form',$data);
@@ -42,9 +45,7 @@ class Kelompok extends CI_Controller{
             );
 
             $this->kelompok_model->insert_data($data,'kelompok');
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data Kelompok Berhasil Ditambahkan ! <button type="button" class="close" data-dismiss="alert" aria-label="Close"> 
-            <span aria-hidden="true">&times;</span></div>');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert"> Data Kelompok Berhasil Ditambahkan ! <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></div>');
             redirect('administrator/kelompok');
         }
 
@@ -52,23 +53,15 @@ class Kelompok extends CI_Controller{
 
     public function _rules()
     {
-        $this->form_validation->set_rules('kode_kelompok','kode_kelompok','required', [
-            'required' => 'Kode Kelompok Wajib Diisi'
-        ]);
-        $this->form_validation->set_rules('nama_kelompok','nama_kelompok','required', [
-            'required' => 'Nama Kelompok Wajib Diisi'
-        ]);
-        $this->form_validation->set_rules('nama_jurusan','nama_jurusan','required', [
-            'required' => 'Nama JurusanWajib Diisi'
-        ]);
+        $this->form_validation->set_rules('kode_kelompok','kode_kelompok','required', ['required' => 'Kode Kelompok Wajib Diisi']);
+        $this->form_validation->set_rules('nama_kelompok','nama_kelompok','required', ['required' => 'Nama Kelompok Wajib Diisi']);
+        $this->form_validation->set_rules('nama_jurusan','nama_jurusan','required', ['required' => 'Nama JurusanWajib Diisi']);
     }
 
     public function update($id)
     {
         $where= array('id_kelompok' =>$id);
-
         $data['kelompok'] = $this->db->query("select * from kelompok klp, jurusan jrs where klp.nama_jurusan=jrs.nama_jurusan and klp.id_kelompok='$id'")->result();
-
         $data['Jurusan'] = $this->kelompok_model->tampil_data('jurusan')->result();
 
         $this->load->view('templates_administrator/header');
@@ -91,15 +84,21 @@ class Kelompok extends CI_Controller{
             'nama_jurusan' => $nama_jurusan,
         );
 
-        $where= array('id_kelompok' =>$id);
+        $where= array(
+            'id_kelompok' =>$id
+        );
 
-        $this->kelompok_model->insert_data($data,'kelompok');
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            Data Kelompok Berhasil Ditambahkan ! <button type="button" class="close" data-dismiss="alert" aria-label="Close"> 
-            <span aria-hidden="true">&times;</span></div>');
+        $this->kelompok_model->update_data($where,$data,'kelompok');
+        $this->session->set_flashdata('pesan','<div 
+                                        class="alert alert-success alert-dismissible fade show" role="alert">
+                                        Data Jurusan Berhasil Diupdate
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>');
         redirect('administrator/kelompok');
 
-        $data['kelompok'] = $this->db->query("select * from kelompok klp, jurusan jrs where klp.id_jurusan=jrs.id_jurusan and klp.id_kelompok='$id'")->result();
+        $data['kelompok'] = $this->db->query("select * from kelompok klp, jurusan jrs where klp.nama_jurusan=jrs.nama_jurusan and klp.id_kelompok='$id'")->result();
 
         $data['Jurusan'] = $this->kelompok_model->tampil_data('jurusan')->result();
 
@@ -109,20 +108,23 @@ class Kelompok extends CI_Controller{
         $this->load->view('templates_administrator/footer');
 
     }
-
+   
     public function delete($id)
     {
         $where= array('id_kelompok' =>$id);
 
-        $this->kelompok_model->hapus_data($data,'kelompok');
-        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-            Data Kelompok Berhasil Dihapus ! <button type="button" class="close" data-dismiss="alert" aria-label="Close"> 
-            <span aria-hidden="true">&times;</span></div>');
+        $this->kelompok_model->hapus_data($where,'kelompok');
+        $this->session->set_flashdata('pesan', '<div 
+                            class="alert alert-danger alert-dismissible fade show" role="alert">
+                            Data Jurusan Berhasil Dihapus
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>');
         redirect('administrator/kelompok');
 
-        
-
     }
-
+    
+    
 
 }

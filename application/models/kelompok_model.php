@@ -7,9 +7,15 @@ class kelompok_model extends CI_Model
         return $this->db->get($table);
     }
 
+   
+
     public function insert_data($data,$table)
     {
         $this->db->insert($table,$data);
+    }
+    public function edit_data($where,$table)
+    {
+        $this->db->get_where($table,$where);
     }
 
     public function update_data($where,$data,$table)
@@ -18,7 +24,7 @@ class kelompok_model extends CI_Model
         $this->db->update($table,$data);
     }
 
-    public function hapus_data($where,$data,$table)
+    public function hapus_data($where,$table)
     {
         $this->db->where($where);
         $this->db->delete($table);
