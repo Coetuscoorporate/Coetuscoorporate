@@ -56,7 +56,7 @@ class Kelompok extends CI_Controller{
                 </button>
                 </div>');
             redirect('administrator/kelompok/tambah_kelompok');
-        } else {
+        }else {
             $data = array(
                 'kode_kelompok' => $kode_kelompok,
                 'nama_kelompok' => $nama_kelompok,

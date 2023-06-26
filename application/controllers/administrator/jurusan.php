@@ -44,7 +44,18 @@ class Jurusan extends CI_Controller{
                     </button>
                     </div>');
                 redirect('administrator/jurusan/input');
-            } else {
+            }
+            // Periksa apakah nama jurusan sudah ada dalam database
+            elseif ($this->jurusan_model->check_nama_jurusan_exists($nama_jurusan)) {
+                $this->session->set_flashdata('pesan', '<div 
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Nama Jurusan Sudah Ada!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>');
+                redirect('administrator/jurusan/input');
+            }else {
                 $data = array(
                     'kode_jurusan' => $kode_jurusan,
                     'nama_jurusan' => $nama_jurusan,
