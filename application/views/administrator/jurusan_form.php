@@ -5,6 +5,7 @@
     </div>
 
     <form method="post" action="<?php echo base_url('administrator/jurusan/input_aksi') ?>">
+    <?php echo $this->session->flashdata('pesan'); ?>
         <div class="form-group">
             <label>Kode Jurusan</label>
             <input type="text" name="kode_jurusan" placeholder="Masukkan Kode Jurusan" class="form-control">
