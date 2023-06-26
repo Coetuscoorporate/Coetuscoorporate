@@ -7,14 +7,14 @@
 <form method="post" action="<?php echo base_url('administrator/kelompok/tambah_kelompok_aksi')  ?>">
 <div class="form-group">
     <label>Kode Kelompok</label>
-    <input type="text" name="kode_kelompok" value="" Class="form-control" readonly>
+    <input type="text" name="kode_kelompok" placeholder="Masukan Kode Kelompok" Class="form-control" >
     <?php echo form_error('kode_kelompok', '<div class="text-danger small" ml-3') ?>
 
 </div>
 
 <div class="form-group">
     <label>Nama Kelompok</label>
-    <input type="text" name="nama_kelompok" value="" placeholder="Masukan Nama Kelompok" Class="form-control" required>
+    <input type="text" name="nama_kelompok" placeholder="Masukan Nama Kelompok" Class="form-control" required>
     <?php echo form_error('nama_kelompok', '<div class="text-danger small" ml-3') ?>
 </div>
 
