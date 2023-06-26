@@ -28,30 +28,46 @@ class Jurusan extends CI_Controller{
     {
         $this->_rules();
 
-        if($this->form_validation->run() == FALSE) {
+        if ($this->form_validation->run() == FALSE) {
             $this->input();
-        }else {
-            $data = array(
-                'kode_jurusan'  => $this->input->post('kode_jurusan', TRUE),
-                'nama_jurusan'  => $this->input->post('nama_jurusan', TRUE),
-            );
+        } else {
+            $kode_jurusan = $this->input->post('kode_jurusan', TRUE);
+            $nama_jurusan = $this->input->post('nama_jurusan', TRUE);
 
-            $this->jurusan_model->input_data($data);
-            $this->session->set_flashdata('pesan','<div 
-                            class="alert alert-success alert-dismissible fade show" role="alert">
-                            Data Jurusan Berhasil Ditambahkan
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>');
-            redirect('administrator/jurusan');
+            // Periksa apakah kode jurusan sudah ada dalam database
+            if ($this->jurusan_model->check_jurusan_exists($kode_jurusan)) {
+                $this->session->set_flashdata('pesan', '<div 
+                    class="alert alert-danger alert-dismissible fade show" role="alert">
+                    Kode Jurusan sudah ada!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>');
+                redirect('administrator/jurusan/input');
+            } else {
+                $data = array(
+                    'kode_jurusan' => $kode_jurusan,
+                    'nama_jurusan' => $nama_jurusan,
+                );
+
+                $this->jurusan_model->input_data($data);
+                $this->session->set_flashdata('pesan', '<div 
+                    class="alert alert-success alert-dismissible fade show" role="alert">
+                    Data Jurusan Berhasil Ditambahkan
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>');
+                redirect('administrator/jurusan');
+            }
         }
     }
 
+
     public function _rules()
     {
-        $this->form_validation->set_rules('kode_jurusan','kode_jurusan','required', ['required' => 'Kode Jurusan wajib diisi!']);
-        $this->form_validation->set_rules('nama_jurusan','nama_jurusan','required', ['required' => 'Nama Jurusan wajib diisi!']);
+        $this->form_validation->set_rules('kode_jurusan','kode_jurusan','required|alpha', ['required' => 'Kode Jurusan wajib diisi!','alpha' => 'Kode Jurusan hanya boleh berisi huruf.']);
+        $this->form_validation->set_rules('nama_jurusan','nama_jurusan','required|alpha', ['required' => 'Nama Jurusan wajib diisi!','alpha' => 'Nama Jurusan hanya boleh berisi huruf.']);
     }
     
     public function update($id)
@@ -90,7 +106,7 @@ class Jurusan extends CI_Controller{
         redirect('administrator/jurusan');
     }
 
-    public function delete($id)
+    /*public function delete($id)
     {
         $where = array('id_jurusan' => $id);
         $this->jurusan_model->hapus_data($where, 'jurusan');
@@ -102,5 +118,5 @@ class Jurusan extends CI_Controller{
                             </button>
                             </div>');
         redirect('administrator/jurusan');
-    }
+    }*/
 }
