@@ -31,6 +31,14 @@ class Jurusan_model extends CI_Model{
         return $query->num_rows() > 0;
     }
 
+    public function check_nama_jurusan_exists($nama_jurusan)
+    {
+        $this->db->where('nama_jurusan', $nama_jurusan);
+        $query = $this->db->get('jurusan');
+
+        return $query->num_rows() > 0;
+    }
+
     //public function hapus_data($where,$table)
     //{
     //    $this->db->where($where);
