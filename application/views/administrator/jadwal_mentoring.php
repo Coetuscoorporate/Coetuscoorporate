@@ -20,13 +20,8 @@
 
         <?php
         $no = 1;
-        foreach ($jurusan as $jrs) : ?>
-        <tr>
-            <td width="20px"><?php echo $no++ ?></td>
-            <td><?php echo $jrs->kode_jurusan ?></td>
-            <td><?php echo $jrs->nama_jurusan ?></td>
-        </tr>
-        <?php endforeach; ?>
+        # foreach ($jurusan as $jrs) : ?>
+       
 
     </table>
 </div>
