@@ -7,15 +7,18 @@
     <?php foreach($jurusan as $jrs) : ?>
 
         <form method="post" action="<?php echo base_url('administrator/jurusan/update_aksi') ?>">
+        <?php echo $this->session->flashdata('pesan'); ?>
             <div class="form-group">
                 <label>Kode Jurusan</label>
                 <input type="hidden" name="id_jurusan" value="<?php echo $jrs->id_jurusan ?>">
                 <input type="text" name="kode_jurusan" class="form-control" value="<?php echo $jrs->kode_jurusan ?>">
+                <?php echo form_error('kode_jurusan', '<div class="text-danger small ml-3">', '</div>'); ?>
             </div>
 
             <div class="form-group">
                 <label>Nama Jurusan</label>
                 <input type="text" name="nama_jurusan" class="form-control" value="<?php echo $jrs->nama_jurusan ?>">
+                <?php echo form_error('nama_jurusan', '<div class="text-danger small ml-3">', '</div>'); ?>
             </div>
 
             <button type="submit" class="btn btn-primary">Simpan</button>
