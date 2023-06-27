@@ -9,6 +9,7 @@
     <?php foreach($kelompok as $klp) : ?>
 
         <form method="post" action="<?php echo base_url('administrator/kelompok/update_aksi') ;?>">
+        <?php echo $this->session->flashdata('pesan'); ?>
             <div class="form-group">
                 <label>Kode Kelompok</label>
                 <input type="hidden" name="id_kelompok" value="<?php echo $klp->id_kelompok ?>">
