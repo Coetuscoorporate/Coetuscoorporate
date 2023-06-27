@@ -97,25 +97,31 @@ class Jurusan extends CI_Controller{
         $kode_jurusan = $this->input->post('kode_jurusan');
         $nama_jurusan = $this->input->post('nama_jurusan');
 
-        $data = array(
-            'kode_jurusan' => $kode_jurusan,
-            'nama_jurusan' => $nama_jurusan,
-        );
+        // Validasi input kode_jurusan dan nama_jurusan
+        $this->form_validation->set_rules('kode_jurusan', 'Kode Jurusan', 'required|alpha', ['required' => 'Kode Jurusan wajib diisi!','alpha' => 'Kode Jurusan hanya boleh berisi huruf.']);
+        $this->form_validation->set_rules('nama_jurusan', 'Nama Jurusan', 'required|alpha', ['required' => 'Nama Jurusan wajib diisi!','alpha' => 'Nama Jurusan hanya boleh berisi huruf.']);
 
-        $where = array(
-            'id_jurusan' => $id,
-        );
 
-        $this->jurusan_model->update_data($where,$data,'jurusan');
-        $this->session->set_flashdata('pesan','<div 
-                            class="alert alert-success alert-dismissible fade show" role="alert">
-                            Data Jurusan Berhasil Diupdate
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>');
-        redirect('administrator/jurusan');
+            $data = array(
+                'kode_jurusan' => $kode_jurusan,
+                'nama_jurusan' => $nama_jurusan,
+            );
+
+            $where = array(
+                'id_jurusan' => $id,
+            );
+
+            $this->jurusan_model->update_data($where, $data, 'jurusan');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Data Jurusan Berhasil Diupdate
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
+            redirect('administrator/jurusan');
     }
+
+
 
     /*public function delete($id)
     {

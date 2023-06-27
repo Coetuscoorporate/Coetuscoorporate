@@ -62,7 +62,7 @@ class Auth extends CI_Controller{
             }else {
                 $this->session->set_flashdata('pesan','<div 
                     class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">wew</h4>
+                    <h4 class="alert-heading">Maaf</h4>
                     <p>Username atau Password Salah!</p>
                     </div>');
                 redirect('administrator/auth');
