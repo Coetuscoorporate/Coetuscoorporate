@@ -40,10 +40,10 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <br>
-                                        <h1 class="h4 text-gray-900 mb-4">Login Administrator</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Login Mentor</h1>
                                         <?php echo $this->session->flashdata('pesan') ?>
                                     </div>
-                                    <form method="post" action="<?php echo base_url('administrator/auth/proses_login') ?>" class="user">
+                                    <form method="post" action="<?php echo base_url('mentor/auth/proses_login_mentor') ?>" class="user">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -66,12 +66,6 @@
                                         btn-user btn-block">Login
                                         </button>
                                         <br>
-                                    
-                                        <div class="col-md-20 form-group">
-                                            <a href="<?php echo base_url('mentee/auth')?>">Mentee Login Here</a>
-                                            <span class="separator">|</span>
-                                            <a href="<?php echo base_url('mentor/auth')?>">Mentor Login Here</a>
-                                        </div>
                                     </form>
                                     <hr>
                                     <br>
