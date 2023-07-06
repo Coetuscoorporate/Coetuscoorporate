@@ -104,6 +104,20 @@ class Kelompok extends CI_Controller{
         $nama_kelompok= $this->input->post('nama_kelompok');
         $nama_jurusan= $this->input->post('nama_jurusan');
 
+        $this->form_validation->set_rules('kode_kelompok', 'Kode Kelompok', 'required|alpha');
+        $this->form_validation->set_rules('nama_kelompok', 'Nama Kelompok', 'required|alpha');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Validasi tidak berhasil. Pastikan kode Kelompok dan nama Kelompok hanya berisi huruf.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>');
+            redirect('administrator/kelompok/update/' . $id);
+            return;
+        }
+
         $data = array(
             'kode_kelompok' => $kode_kelompok,
             'nama_kelompok' => $nama_kelompok,
