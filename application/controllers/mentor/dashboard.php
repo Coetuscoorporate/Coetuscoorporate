@@ -25,10 +25,10 @@ class Dashboard extends CI_Controller{
             'username'  => $data->username,
             'level'     => $data->level,
         );
-        $this->load->view('templates_administrator/header');
-        $this->load->view('templates_administrator/sidebar');
+        $this->load->view('templates_mentor/header');
+        $this->load->view('templates_mentor/sidebar');
         $this->load->view('mentor/dashboard',$data);
-        $this->load->view('templates_administrator/footer');
+        $this->load->view('templates_mentor/footer');
 
     }
 }

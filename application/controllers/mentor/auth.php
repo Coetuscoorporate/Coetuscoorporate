@@ -4,9 +4,9 @@ class Auth extends CI_Controller{
 
     public function index()
     {
-        $this->load->view('templates_administrator/header');
+        $this->load->view('templates_mentor/header');
         $this->load->view('mentor/login_mentor');
-        $this->load->view('templates_administrator/footer');
+        $this->load->view('templates_mentor/footer');
     }
 
     
@@ -21,9 +21,9 @@ class Auth extends CI_Controller{
             'required' => 'Password wajib diisi!'
     ]);
         if ($this->form_validation->run() == FALSE){
-            $this->load->view('templates_administrator/header');
+            $this->load->view('templates_mentor/header');
             $this->load->view('mentor/login_mentor');
-            $this->load->view('templates_administrator/footer');
+            $this->load->view('templates_mentor/footer');
         }else {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
