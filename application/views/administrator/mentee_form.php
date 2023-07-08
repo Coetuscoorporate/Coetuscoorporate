@@ -5,7 +5,7 @@
     </div>
 
     <?php echo form_open_multipart('administrator/mentee/tambah_mentee_aksi') ?>
-
+    <?php echo $this->session->flashdata('pesan'); ?>
     <div class="form-group">
         <label>NIM Mentee</label>
         <input type="text" name="nim" class="form-control">

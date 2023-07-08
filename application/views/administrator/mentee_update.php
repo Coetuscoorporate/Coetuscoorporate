@@ -7,7 +7,7 @@
 
     <?php foreach($mentee as $mte) : ?>
     <?php echo form_open_multipart('administrator/mentee/update_mentee_aksi') ?>
-
+    <?php echo $this->session->flashdata('pesan'); ?>
     <div class="form-group">
         <label>NIM Mentee</label>
         <input type="hidden" name="id" class="form-control" value="<?php echo $mte->id ?>">

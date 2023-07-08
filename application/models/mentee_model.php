@@ -27,4 +27,15 @@ class Mentee_model extends CI_Model{
         $this->db->where($where);
         $this->db->update($table,$data);
     }
+
+    // Di mentee_model.php
+
+    public function check_nim_exists($nim)
+    {
+        $this->db->where('nim', $nim);
+        $query = $this->db->get('mentee');
+
+        return $query->num_rows() > 0;
+    }
+
 }
