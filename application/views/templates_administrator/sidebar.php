@@ -65,7 +65,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Sub-Menu Kurikulum :</h6>
-                        <a class="collapse-item" href="utilities-color.html">Materi</a>
+                        <a class="collapse-item" href="<?php echo base_url('administrator/materi') ?>">Materi</a>
                         <a class="collapse-item" href="utilities-border.html">Tugas</a>
                         <a class="collapse-item" href="utilities-border.html">Pelatihan</a>
                     </div>

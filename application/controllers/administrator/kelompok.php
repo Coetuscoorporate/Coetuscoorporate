@@ -25,7 +25,7 @@ class Kelompok extends CI_Controller{
     }
 
     public function tambah_kelompok_aksi()
-{
+    {
     $this->_rules();
     if ($this->form_validation->run() == FALSE) 
     {
