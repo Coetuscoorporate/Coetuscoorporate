@@ -30,12 +30,13 @@ class Jadwal_mentoring extends CI_Controller{
     } 
     else {
 
-            $nama_mentor = $this->input->post('nama_mentor', TRUE);
-            $nama_kelompok = $this->input->post('nama_kelompok', TRUE);
-            $judul_materi = $this->input->post('judul_materi', TRUE);
-            $waktu = $this->input->post('waktu', TRUE);
-            $Tempat = $this->input->post('Tempat', TRUE);
+        $nama_mentor = $this->input->post('nama_mentor', TRUE);
+        $nama_kelompok = $this->input->post('nama_kelompok', TRUE);
+        $judul_materi = $this->input->post('judul_materi', TRUE);
+        $waktu = $this->input->post('waktu', TRUE);
+        $Tempat = $this->input->post('Tempat', TRUE);
 
+    
 
             $data = array(
                 'nama_mentor' => $nama_mentor,
