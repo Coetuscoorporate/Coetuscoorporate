@@ -16,4 +16,15 @@ class Mentee_model extends CI_Model{
             return false;
         }
     }
+
+    public function insert_data($data,$table)
+    {
+        $this->db->insert($table,$data);
+    }
+
+    public function update_data($where,$data,$table)
+    {
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
 }
