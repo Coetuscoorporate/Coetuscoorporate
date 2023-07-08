@@ -60,11 +60,18 @@
                                                 ?>
                                         </div>
                                         <br>
-    
+                                        
+                                        
                                         <button class="btn btn-primary 
                                         btn-user btn-block">Login
                                         </button>
-                                        
+                                        <br>
+                                    
+                                        <div class="col-md-20 form-group">
+                                            <a href="<?php echo base_url('mentee/auth')?>">Mentee Login Here</a>
+                                            <span class="separator">|</span>
+                                            <a href="<?php echo base_url('mentor/auth')?>">Mentor Login Here</a>
+                                        </div>
                                     </form>
                                     <hr>
                                     <br>

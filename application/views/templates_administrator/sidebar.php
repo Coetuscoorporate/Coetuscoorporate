@@ -45,7 +45,7 @@
                         <a class="collapse-item" href="<?php echo base_url('administrator/jurusan') ?>">Jurusan</a>
                         <a class="collapse-item" href="<?php echo base_url('administrator/kelompok') ?>">Kelompok</a>
                         <a class="collapse-item" href="<?php echo base_url('administrator/jadwal_mentoring') ?>">Jadwal Mentoring</a>
-                        <a class="collapse-item" href="cards.html">Mentee</a>
+                        <a class="collapse-item" href="<?php echo base_url('administrator/mentee') ?>">Mentee</a>
                         <a class="collapse-item" href="buttons.html">Tahun Periode</a>
                         <a class="collapse-item" href="cards.html">Input Nilai</a>
                         <a class="collapse-item" href="buttons.html">Transkip Nilai</a>
