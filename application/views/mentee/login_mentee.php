@@ -67,9 +67,7 @@
             <div class="col-lg-12">
                 <h1 class="mb-3">Silahkan Login</h1>
                 <p>
-                There is a moment in the life of any aspiring astronomer that
-                it is time to buy that first telescope. It’s exciting to think
-                about setting up your own viewing station.
+                Ruang Hijrah ini akan membuat proses mentoring mu menjadi lebih baik.
                 </p>
             </div>
             </div>

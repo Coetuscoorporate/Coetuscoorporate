@@ -35,10 +35,10 @@
         <div class="form-group">
             <label>Nama Kelompok</label>
             <select name="nama_kelompok" class="form-control">
-                <option value="">--Pilih Kelompok--</option>
-                    <?php foreach ($kelompok as $klp) : ?>
-                    <option value="<?php echo $klp->nama_kelompok ?>"><?php echo $klp ->nama_kelompok;?></option>
-                    <?php endforeach; ?>
+                <option value="">-- Pilih Nama Kelompok --</option>
+                <?php foreach($kelompok as $klp) : ?>
+                    <option value="<?php echo $klp->nama_kelompok ?>"><?php echo $klp->nama_kelompok ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
 
