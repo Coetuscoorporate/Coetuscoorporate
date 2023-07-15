@@ -105,16 +105,16 @@
                     role="button"
                     aria-haspopup="true"
                     aria-expanded="false"
-                    >Blog</a
+                    >Account</a
                   >
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="blog.html">Blog</a>
+                      <a class="nav-link" href="blog.html">Personal Data</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="single-blog.html"
-                        >Blog Details</a
-                      >
+                      <a class="nav-link" href="<?php echo base_url('mentee/auth/logout') ?>">
+                        <i class="fas fa-fw fa-sign-out-alt"></i>
+                        <span>Logout</span></a>
                     </li>
                   </ul>
                 </li>
