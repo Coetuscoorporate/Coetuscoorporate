@@ -11,32 +11,31 @@
         <form method="post" action="<?php echo base_url('administrator/jadwal_mentoring/update_aksi') ;?>">
         <?php echo $this->session->flashdata('pesan'); ?>
 
+    
+
             <div class="form-group">
                 <label>Nama Mentor</label>
-                <input type="text" name="nama_mentor" placeholder="Masukkan Nama Mentor" class="form-control">
-                <?php echo form_error('nama_mentor','<div class="text-danger small ml-3">') ?>
+                <input type="hidden" name="id_jadwal" value="<?php echo $jdl->id_jadwal ?>">
+                <input type="text" name="nama_mentor" class="form-control" value="<?php echo $jdl->nama_mentor ?>">
             </div>
 
             <div class="form-group">
                 <label>Judul Materi</label>
-                <input type="text" name="judul_materi" placeholder="Masukkan Judul Materi" class="form-control">
-                <?php echo form_error('judul_materi','<div class="text-danger small ml-3">') ?>
+                <input type="text" name="judul_materi" class="form-control" value="<?php echo $jdl->judul_materi ?>">
             </div>
 
             <div class="form-group">
                 <label>Waktu</label>
-                <input type="text" name="waktu" placeholder="Masukkan waktu" class="form-control">
-                <?php echo form_error('waktu','<div class="text-danger small ml-3">') ?>
+                <input type="text" name="waktu" class="form-control" value="<?php echo $jdl->waktu ?>">
             </div>
 
             <div class="form-group">
                 <label>Tempat</label>
-                <input type="text" name="Tempat" placeholder="Masukkan Tempat Mentoring" class="form-control">
-                <?php echo form_error('Tempat','<div class="text-danger small ml-3">') ?>
+                <input type="text" name="Tempat" class="form-control" value="<?php echo $jdl->Tempat ?>">
             </div>
 
-                <div class="form-group">
-                    <label>Nama Kelompok</label>
+            <div class="form-group">
+                <label>Nama Kelompok</label>
                     <select name="nama_kelompok" class="form-control">
                         <option value="<?php echo $jdl->nama_kelompok?>"><?php echo $jdl->nama_kelompok ?></option>
                             <?php foreach ($kelompok as $klp) : ?>

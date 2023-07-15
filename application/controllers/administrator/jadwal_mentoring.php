@@ -3,7 +3,7 @@
 class Jadwal_mentoring extends CI_Controller{
     public function index()
     {
-        $data['jadwal_mentoring'] = $this->jadwal_mentoring_model->tampil_data()->result();
+        $data['jadwal_mentoring'] = $this->jadwal_mentoring_model->tampil_data('jadwal_mentoring')->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/jadwal_mentoring', $data);
@@ -13,7 +13,7 @@ class Jadwal_mentoring extends CI_Controller{
 
     public function tambah_jadwal_mentoring()
     {
-        $data['jadwal_mentoring'] = $this->jadwal_mentoring_model->tampil_data('jadwal_mentoring')->result();
+        $data['kelompok'] = $this->jadwal_mentoring_model->tampil_data('kelompok')->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/jadwal_mentoring_form',$data);
@@ -121,7 +121,7 @@ class Jadwal_mentoring extends CI_Controller{
             'id_jadwal' =>$id
         );
 
-        $this->jadwa_mentoring_model->update_data($where,$data,'jadwal_mentoring');
+        $this->jadwal_mentoring_model->update_data($where,$data,'jadwal_mentoring');
         $this->session->set_flashdata('pesan','<div 
                                         class="alert alert-success alert-dismissible fade show" role="alert">
                                         Jadwal Mentoring Berhasil Diupdate
@@ -132,8 +132,7 @@ class Jadwal_mentoring extends CI_Controller{
         redirect('administrator/jadwal_mentoring');
 
         $data['jadwal_mentoring'] = $this->db->query("select * from jadwal_mentoring jdl, kelompok klp where jdl.nama_kelompok=klp.nama_jurusan and jdl.id_jadwal='$id'")->result();
-
-        $data['kelompok'] = $this->jadwal_kelompok_model->tampil_data('kelompok')->result();
+        $data['kelompok'] = $this->jadwal_mentoring_model->tampil_data('kelompok')->result();
 
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');

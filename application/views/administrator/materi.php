@@ -3,9 +3,10 @@
     <div class="alert alert-success" role="alert">
         <i class=" fas fa-fw fa-book-open"></i> Materi
     </div>
+    
     <?php echo $this->session->flashdata('pesan') ?>
 
-    <?php echo anchor('administrator/kelompok/tambah_kelompok','<button
+    <?php echo anchor('administrator/materi/tambah_materi','<button
         class="btn btn-sm btn-primary mb-3"><i class="fas fa-plus fa-sm"></i> TAMBAH MATERI</button>') ?>
 
 
@@ -13,7 +14,8 @@
         <tr>
             <th>NO</th>
             <th>TM</th>
-            <th>MATERI</th>
+            <th>NAMA MATERI</th>
+            <th>CAPAIAN</th>
             <th>WAKTU</th>
             <th>BULAN</th>
             <th>MINGGU</th>
@@ -27,6 +29,7 @@
                 <td width="20px"><?php echo $no++ ?></td>
                 <td><?php echo $mtr->TM ?></td>
                 <td><?php echo $mtr->materi ?></td>
+                <td><?php echo $mtr->capaian ?></td>
                 <td><?php echo $mtr->waktu ?></td>
                 <td><?php echo $mtr->bulan ?></td>
                 <td><?php echo $mtr->minggu ?></td>

@@ -27,8 +27,8 @@
         <tr>
             <td width="20px"><?php echo $no++ ?></td>
             <td><?php echo $jdl->nama_mentor ?></td>
-            <td><?php echo $jdl->judul_materi ?></td>
             <td><?php echo $jdl->nama_kelompok ?></td>
+            <td><?php echo $jdl->judul_materi ?></td>
             <td><?php echo $jdl->waktu ?></td>
             <td><?php echo $jdl->Tempat ?></td>
             <td width="20px"><?php echo anchor('administrator/jadwal_mentoring/update/'.$jdl->id_jadwal,'<div class="btn 
