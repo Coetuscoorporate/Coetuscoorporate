@@ -1,6 +1,6 @@
 <?php
 
-class Dashboard extends CI_Controller{
+class Myaccount extends CI_Controller{
 
     public function __construct() {
         parent:: __construct();
@@ -19,16 +19,14 @@ class Dashboard extends CI_Controller{
 
     public function index()
     {
-        $data = $this->user_model_mentee->ambil_data($this->session->userdata
+        $data = $this->myaccount_model_mentee->ambil_data($this->session->userdata
             ['username']);
         $data = array(
             'username'  => $data->username,
             'level'     => $data->level,
         );
-        $this->load->view('templates/ruanghijrah/header');
-        $this->load->view('mentee/dashboard',$data);
+        $this->load->view('mentee/myaccount',$data);
         $this->load->view('templates/ruanghijrah/footer');
 
     }
-
 }
