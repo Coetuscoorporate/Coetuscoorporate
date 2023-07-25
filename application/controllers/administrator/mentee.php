@@ -6,6 +6,7 @@ class Mentee extends CI_Controller{
     {
         $data['mentee'] = $this->mentee_model->tampil_data('mentee')->result();
         $data['kelompok'] = $this->kelompok_model->tampil_data('kelompok')->result();
+        $data['jurusan'] = $this->jurusan_model->tampil_data('jurusan')->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/mentee',$data);
@@ -24,6 +25,7 @@ class Mentee extends CI_Controller{
     public function tambah_mentee()
     {
         $data['kelompok'] = $this->mentee_model->tampil_data('kelompok')->result();
+        $data['jurusan'] = $this->mentee_model->tampil_data('jurusan')->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/mentee_form',$data);
@@ -62,6 +64,7 @@ class Mentee extends CI_Controller{
             $tanggal_lahir = $this->input->post('tanggal_lahir');
             $jenis_kelamin = $this->input->post('jenis_kelamin');
             $nama_kelompok = $this->input->post('nama_kelompok');
+            $nama_jurusan = $this->input->post('nama_jurusan');
             $photo         = $_FILES['photo'];
             if ($photo == '') {
             } else {
@@ -87,6 +90,7 @@ class Mentee extends CI_Controller{
                 'tanggal_lahir' => $tanggal_lahir,
                 'jenis_kelamin' => $jenis_kelamin,
                 'nama_kelompok' => $nama_kelompok,
+                'nama_jurusan' => $nama_jurusan,
                 'photo'         => $photo
             );
 
@@ -108,6 +112,7 @@ class Mentee extends CI_Controller{
         $where = array('$id' => $id);
         $data['mentee'] = $this->db->query("select * from mentee mte, kelompok klp where mte.nama_kelompok=klp.nama_kelompok and mte.id='$id'")->result();
         $data['kelompok'] = $this->kelompok_model->tampil_data('kelompok')->result();
+        $data['jurusan'] = $this->jurusan_model->tampil_data('jurusan')->result();
         $data['detail'] = $this->mentee_model->ambil_id_mentee($id);
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
@@ -127,6 +132,7 @@ class Mentee extends CI_Controller{
         $tanggal_lahir = $this->input->post('tanggal_lahir');
         $jenis_kelamin = $this->input->post('jenis_kelamin');
         $nama_kelompok = $this->input->post('nama_kelompok');
+        $nama_jurusan = $this->input->post('nama_jurusan');
         $photo         = $_FILES['userfile']['name'];
 
         // Validasi NIM (harus berisi angka)
@@ -200,7 +206,8 @@ class Mentee extends CI_Controller{
             'tempat_lahir'  => $tempat_lahir,
             'tanggal_lahir' => $tanggal_lahir,
             'jenis_kelamin' => $jenis_kelamin,
-            'nama_kelompok' => $nama_kelompok
+            'nama_kelompok' => $nama_kelompok,
+            'nama_jurusan' => $nama_jurusan
         );
 
         $where = array (
@@ -242,5 +249,6 @@ class Mentee extends CI_Controller{
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required', ['required' => 'Tanggal Lahir wajib diisi!']);
         $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required', ['required' => 'Jenis Kelamin wajib diisi!']);
         $this->form_validation->set_rules('nama_kelompok', 'Nama Kelompok', 'required', ['required' => 'Nama Kelompok wajib diisi!']);
+        $this->form_validation->set_rules('nama_jurusan', 'Nama Jurusan', 'required', ['required' => 'Nama Jurusan wajib diisi!']);
     }
 }

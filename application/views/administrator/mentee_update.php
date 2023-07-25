@@ -71,6 +71,16 @@
     </div>
 
     <div class="form-group">
+        <label>Nama Jurusan</label>
+        <select name="nama_jurusan" class="form-control" value="<?php echo $mte->nama_jurusan ?>">
+            <?php foreach($jurusan as $jrs) : ?>
+                <option value="<?php echo $jrs->nama_jurusan ?>"><?php echo $jrs->nama_jurusan ?></option>
+            <?php endforeach; ?>
+        </select>
+        <?php echo form_error('nama_jurusan','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
+
+    <div class="form-group">
 
         <?php foreach($detail as $dt) : ?>
             <img src="<?php echo base_url(). 'assets/uploads/'.$mte->photo ?>">

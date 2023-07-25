@@ -55,6 +55,11 @@
             <td><?php echo $dt->nama_kelompok; ?></td>
         </tr>
 
+        <tr>
+            <td>NAMA JURUSAN</td>
+            <td><?php echo $dt->nama_jurusan; ?></td>
+        </tr>
+
         <?php endforeach; ?>
     </table>
     

@@ -70,6 +70,17 @@
     </div>
 
     <div class="form-group">
+        <label>Nama Jurusan</label>
+        <select name="nama_jurusan" class="form-control">
+            <option value="">-- Pilih Nama Jurusan --</option>
+            <?php foreach($jurusan as $jrs) : ?>
+                <option value="<?php echo $jrs->nama_jurusan ?>"><?php echo $jrs->nama_jurusan ?></option>
+            <?php endforeach; ?>
+        </select>
+        <?php echo form_error('nama_jurusan','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
+
+    <div class="form-group">
         <label>Foto</label><br>
         <input type="file" name="photo">
     </div>
