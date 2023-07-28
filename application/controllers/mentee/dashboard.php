@@ -5,7 +5,7 @@ class Dashboard extends CI_Controller{
     public function __construct() {
         parent:: __construct();
     
-        if (!isset($this->session->userdata['username'])) {
+        if (!isset($this->session->userdata['nim'])) {
             $this->session->set_flashdata('pesan','<div 
             class="alert alert-danger alert-dismissible fade show" role="alert">
             Maaf anda belum login!
@@ -20,10 +20,11 @@ class Dashboard extends CI_Controller{
     public function index()
     {
         $data = $this->user_model_mentee->ambil_data($this->session->userdata
-            ['username']);
+            ['nim']);
         $data = array(
-            'username'  => $data->username,
-            'level'     => $data->level,
+            'nim'   => $data->nim,
+            'nama_lengkap'   => $data->nama_lengkap,
+            'level' => $data->level,
         );
         $this->load->view('templates/ruanghijrah/header');
         $this->load->view('mentee/dashboard',$data);

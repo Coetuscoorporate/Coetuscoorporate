@@ -240,6 +240,8 @@ class Mentee extends CI_Controller{
             'required' => 'NIM wajib diisi!',
             'numeric'  => 'NIM hanya boleh berisi angka!'
         ]);
+        $this->form_validation->set_rules('password', 'Password', 'required', ['required' => 'Password wajib diisi!']);
+        $this->form_validation->set_rules('level', 'Level', 'required', ['required' => 'Level wajib diisi!']);
         $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|alpha', [
             'required' => 'Nama Lengkap wajib diisi!',
             'alpha'    => 'Nama Lengkap hanya boleh berisi huruf!'

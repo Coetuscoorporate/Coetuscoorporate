@@ -76,12 +76,13 @@
             <div class="register_form">
             <h3>Ruang Hijrah</h3>
             <p>Login Mentee</p>
-            <form method="post" action="<?php echo base_url('mentee/auth/proses_login_mentee') ?>" class="user">
+            <?php echo $this->session->flashdata('pesan') ?>
+            <form method="post" action="<?php echo base_url('mentee/auth/proses_login_mentee') ?>" class="mentee">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Username Anda . . ." name="username">
-                                                <?php echo form_error('username', '<div
+                                                placeholder="NIM Anda" name="nim">
+                                                <?php echo form_error('nim', '<div
                                                 class = "text-danger small ml-3">','</div>')
                                                 ?>
                                         </div>
