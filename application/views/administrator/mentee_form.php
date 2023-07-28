@@ -13,6 +13,21 @@
     </div>
 
     <div class="form-group">
+        <label>Password</label>
+        <input type="text" name="password" class="form-control">
+        <?php echo form_error('password','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
+
+    <div class="form-group">
+        <label>Level</label>
+        <select name="level" class="form-control">
+            <option value="">-- Pilih Level --</option>
+            <option>mentee</option>
+        </select>
+        <?php echo form_error('level','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
+
+    <div class="form-group">
         <label>Nama Mahasiswa</label>
         <input type="text" name="nama_lengkap" class="form-control">
         <?php echo form_error('nama_lengkap','<div class="text-danger small ml-3">','</div>') ?>

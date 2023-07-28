@@ -16,6 +16,18 @@
     </div>
 
     <div class="form-group">
+        <label>Password</label>
+        <input type="text" name="password" class="form-control" value="<?php echo $mte->password ?>">
+        <?php echo form_error('password','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
+
+    <div class="form-group">
+        <label>Level</label>
+        <input type="text" name="level" class="form-control" value="<?php echo $mte->level ?>">
+        <?php echo form_error('level','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
+
+    <div class="form-group">
         <label>Nama Mahasiswa</label>
         <input type="text" name="nama_lengkap" class="form-control" value="<?php echo $mte->nama_lengkap ?>">
         <?php echo form_error('nama_lengkap','<div class="text-danger small ml-3">','</div>') ?>

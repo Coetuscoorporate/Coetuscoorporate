@@ -56,6 +56,8 @@ class Mentee extends CI_Controller{
             }
 
             // Jika NIM belum ada di database, lanjutkan proses tambah mentee
+            $password      = MD5($this->input->post('password'));
+            $level         = $this->input->post('level');
             $nama_lengkap  = $this->input->post('nama_lengkap');
             $alamat        = $this->input->post('alamat');
             $email         = $this->input->post('email');
@@ -82,6 +84,8 @@ class Mentee extends CI_Controller{
 
             $data = array(
                 'nim'           => $nim,
+                'password'      => $password,
+                'level'         => $level,
                 'nama_lengkap'  => $nama_lengkap,
                 'alamat'        => $alamat,
                 'email'         => $email,
@@ -90,7 +94,7 @@ class Mentee extends CI_Controller{
                 'tanggal_lahir' => $tanggal_lahir,
                 'jenis_kelamin' => $jenis_kelamin,
                 'nama_kelompok' => $nama_kelompok,
-                'nama_jurusan' => $nama_jurusan,
+                'nama_jurusan'  => $nama_jurusan,
                 'photo'         => $photo
             );
 
@@ -124,6 +128,8 @@ class Mentee extends CI_Controller{
     {
         $id            = $this->input->post("id");
         $nim           = $this->input->post('nim');
+        $password      = MD5($this->input->post('password'));
+        $level         = $this->input->post('level');
         $nama_lengkap  = $this->input->post('nama_lengkap');
         $alamat        = $this->input->post('alamat');
         $email         = $this->input->post('email');
@@ -199,6 +205,8 @@ class Mentee extends CI_Controller{
 
         $data = array(
             'nim'           => $nim,
+            'password'      => $password,
+            'level'         => $level,
             'nama_lengkap'  => $nama_lengkap,
             'alamat'        => $alamat,
             'email'         => $email,
