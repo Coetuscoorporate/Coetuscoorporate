@@ -13,9 +13,9 @@
 
         </div>
         <div class="form-group">
-            <label>Nama Materi</label>
-            <input type="text" name="materi" placeholder="Masukan nama materi" class="form-control">
-            <?php echo form_error('materi','<div class="text-danger small ml-3">') ?>
+            <label>Judul Materi</label>
+            <input type="text" name="judul_materi" placeholder="Masukan Judul materi" class="form-control">
+            <?php echo form_error('judul_materi','<div class="text-danger small ml-3">') ?>
         </div>
 
         <div class="form-group">

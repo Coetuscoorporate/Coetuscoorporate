@@ -4,6 +4,9 @@ class Jadwal_mentoring extends CI_Controller{
     public function index()
     {
         $data['jadwal_mentoring'] = $this->jadwal_mentoring_model->tampil_data('jadwal_mentoring')->result();
+        $data['kelompok'] = $this->kelompok_model->tampil_data('kelompok')->result();
+        $data['materi'] = $this->materi_model->tampil_data('materi')->result();
+        $data['mentor'] = $this->mentor_model->tampil_data('mentor')->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/jadwal_mentoring', $data);
@@ -14,6 +17,8 @@ class Jadwal_mentoring extends CI_Controller{
     public function tambah_jadwal_mentoring()
     {
         $data['kelompok'] = $this->jadwal_mentoring_model->tampil_data('kelompok')->result();
+        $data['mentor'] = $this->jadwal_mentoring_model->tampil_data('mentor')->result();
+        $data['materi'] = $this->jadwal_mentoring_model->tampil_data('materi')->result();
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/jadwal_mentoring_form',$data);
@@ -74,8 +79,11 @@ class Jadwal_mentoring extends CI_Controller{
     public function update($id)
     {
         $where= array('id_jadwal' =>$id);
-        $data['jadwal_mentoring'] = $this->db->query("select * from jadwal_mentoring jdl, kelompok klp where jdl.nama_kelompok=klp.nama_kelompok and jdl.id_jadwal='$id'")->result();
+        $data['jadwal_mentoring'] = $this->db->query("select * from jadwal_mentoring jdl, kelompok klp, mentor mtr, materi mti where jdl.nama_kelompok=klp.nama_kelompok AND jdl.nama_mentor=mtr.nama_mentor AND jdl.judul_materi=mti.judul_materi and jdl.id_jadwal='$id'")->result();
         $data['kelompok'] = $this->jadwal_mentoring_model->tampil_data('kelompok')->result();
+        $data['materi'] = $this->jadwal_mentoring_model->tampil_data('materi')->result();
+        $data['mentor'] = $this->jadwal_mentoring_model->tampil_data('mentor')->result();
+    
 
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
@@ -93,10 +101,9 @@ class Jadwal_mentoring extends CI_Controller{
         $waktu= $this->input->post('waktu');
         $Tempat= $this->input->post('Tempat');
 
-        $this->form_validation->set_rules('nama_mentor', 'Nama Mentor', 'required|alpha');
-        $this->form_validation->set_rules('judul_materi', 'Judul Materi', 'required|alpha');
+        
         $this->form_validation->set_rules('waktu', 'Waktu', 'required');
-        $this->form_validation->set_rules('Tempat', 'Tempat', 'required|alpha');
+        $this->form_validation->set_rules('Tempat', 'Tempat', 'required');
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -105,7 +112,7 @@ class Jadwal_mentoring extends CI_Controller{
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>');
-            redirect('administrator/jadwal_mentoring/update/' . $id);
+            redirect('administrator/jadwal_mentoring/update/' .$id);
             return;
         }
 
@@ -114,7 +121,7 @@ class Jadwal_mentoring extends CI_Controller{
             'nama_kelompok' => $nama_kelompok,
             'judul_materi' => $judul_materi,
             'waktu' => $waktu,
-            'Tempat' => $Tempat,
+            'Tempat' => $Tempat
         );
 
         $where= array(
@@ -130,15 +137,6 @@ class Jadwal_mentoring extends CI_Controller{
                                         </button>
                                         </div>');
         redirect('administrator/jadwal_mentoring');
-
-        $data['jadwal_mentoring'] = $this->db->query("select * from jadwal_mentoring jdl, kelompok klp where jdl.nama_kelompok=klp.nama_jurusan and jdl.id_jadwal='$id'")->result();
-        $data['kelompok'] = $this->jadwal_mentoring_model->tampil_data('kelompok')->result();
-
-        $this->load->view('templates_administrator/header');
-        $this->load->view('templates_administrator/sidebar');
-        $this->load->view('administrator/jadwal_mentoring_update',$data);
-        $this->load->view('templates_administrator/footer');
-
     }
 
     public function delete($id)

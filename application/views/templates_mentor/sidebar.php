@@ -19,7 +19,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo base_url('administrator/dashboard') ?>">
+                <a class="nav-link" href="<?php echo base_url('mentor/dashboard') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -37,19 +37,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Akademik</span>
+                    <span>Data</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Sub-Menu Akademik :</h6>
-                        <a class="collapse-item" href="<?php echo base_url('administrator/jurusan') ?>">Jurusan</a>
-                        <a class="collapse-item" href="<?php echo base_url('administrator/kelompok') ?>">Kelompok</a>
-                        <a class="collapse-item" href="<?php echo base_url('administrator/jadwal_mentoring') ?>">Jadwal Mentoring</a>
-                        <a class="collapse-item" href="cards.html">Mentee</a>
-                        <a class="collapse-item" href="buttons.html">Tahun Periode</a>
-                        <a class="collapse-item" href="cards.html">Input Nilai</a>
-                        <a class="collapse-item" href="buttons.html">Transkip Nilai</a>
-                        <a class="collapse-item" href="cards.html">Mentor</a>
+                        <h6 class="collapse-header">Data :</h6>
+                        <a class="collapse-item" href="<?php echo base_url('mentor/jadwal_mentoring') ?>">Jadwal Mentoring</a>
+                        <a class="collapse-item" href="cards.html">Data Anggota</a>
+    
                     </div>
                 </div>
             </li>
@@ -68,23 +63,6 @@
                         <a class="collapse-item" href="utilities-color.html">Materi</a>
                         <a class="collapse-item" href="utilities-border.html">Tugas</a>
                         <a class="collapse-item" href="utilities-border.html">Pelatihan</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - pengaturan Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Pengaturan</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Sub-Menu Pengaturan :</h6>
-                        <a class="collapse-item" href="utilities-color.html">User</a>
-                        <a class="collapse-item" href="utilities-border.html">Menu</a>
                     </div>
                 </div>
             </li>

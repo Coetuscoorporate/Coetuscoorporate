@@ -25,11 +25,11 @@
 
             <div class="form-group">
                 <label>Nama Jurusan</label>
-                <select name="nama_jurusan" class="form-control">
-                    <option value="<?php echo $klp->nama_jurusan?>"><?php echo $klp->nama_jurusan ?></option>
-                        <?php foreach ($jurusan as $jrs) : ?>
-                            <option value="<?php echo $jrs->nama_jurusan ?>"><?php echo $jrs ->nama_jurusan;?></option>
-                        <?php endforeach; ?>
+                    <select name="nama_jurusan" class="form-control">
+                        <option value="<?php echo $klp->nama_jurusan?>"><?php echo $klp->nama_jurusan ?></option>
+                            <?php foreach ($jurusan as $jrs) : ?>
+                                <option value="<?php echo $jrs->nama_jurusan ?>"><?php echo $jrs ->nama_jurusan;?></option>
+                            <?php endforeach; ?>
                 </select>
                 
             </div>

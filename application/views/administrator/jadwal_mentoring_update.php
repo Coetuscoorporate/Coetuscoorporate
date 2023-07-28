@@ -15,13 +15,22 @@
 
             <div class="form-group">
                 <label>Nama Mentor</label>
-                <input type="hidden" name="id_jadwal" value="<?php echo $jdl->id_jadwal ?>">
-                <input type="text" name="nama_mentor" class="form-control" value="<?php echo $jdl->nama_mentor ?>">
+                <select name="nama_mentor" class="form-control">
+                        <option value="<?php echo $jdl->nama_mentor?>"><?php echo $jdl->nama_mentor ?></option>
+                            <?php foreach ($mentor as $mtr) : ?>
+                                <option value="<?php echo $mtr->nama_mentor ?>"><?php echo $mtr->nama_mentor;?></option>
+                            <?php endforeach; ?>
+                </select>
             </div>
 
             <div class="form-group">
                 <label>Judul Materi</label>
-                <input type="text" name="judul_materi" class="form-control" value="<?php echo $jdl->judul_materi ?>">
+                <select name="judul_materi" class="form-control">
+                        <option value="<?php echo $jdl->judul_materi?>"><?php echo $jdl->judul_materi ?></option>
+                            <?php foreach ($materi as $mti) : ?>
+                                <option value="<?php echo $mti->judul_materi ?>"><?php echo $mti ->judul_materi;?></option>
+                            <?php endforeach; ?>
+                </select>
             </div>
 
             <div class="form-group">

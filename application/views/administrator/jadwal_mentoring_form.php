@@ -9,15 +9,25 @@
 
         <div class="form-group">
             <label>Nama Mentor</label>
-            <input type="text" name="nama_mentor" placeholder="Masukkan Nama Mentor" class="form-control">
-            <?php echo form_error('nama_mentor','<div class="text-danger small ml-3">') ?>
+            <select name="nama_mentor" class="form-control">
+                <option value="">-- Pilih Nama Mentor --</option>
+                    <?php foreach ($mentor as $mtr) : ?>
+                        <option value="<?php echo $mtr->nama_mentor ?>"><?php echo $mtr ->nama_mentor;?></option>
+                    <?php endforeach; ?>
+            </select>
+            
         </div>
 
 
         <div class="form-group">
             <label>Judul Materi</label>
-            <input type="text" name="judul_materi" placeholder="Masukkan Judul Materi" class="form-control">
-            <?php echo form_error('judul_materi','<div class="text-danger small ml-3">') ?>
+            <select name="judul_materi" class="form-control">
+                <option value="">-- Pilih Judul Materi --</option>
+                <?php foreach ($materi as $mti) : ?>
+                    <option value="<?php echo $mti->judul_materi ?>"><?php echo $mti ->judul_materi;?></option>
+                <?php endforeach; ?>
+            </select>
+            
         </div>
 
         <div class="form-group">

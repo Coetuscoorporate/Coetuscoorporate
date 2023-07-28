@@ -15,13 +15,13 @@
             </div>
 
             <div class="form-group">
-                <label>Materi</label>
-                <input type="text" name="materi" class="form-control" value="<?php echo $mtr->materi ?>">
+                <label>Judul Materi</label>
+                <input type="text" name="judul_materi" class="form-control" value="<?php echo $mtr->judul_materi ?>">
             </div>
 
             <div class="form-group">
                 <label>Pencapaian</label>
-                <textarea class="form-control" name="capaian" id="summernotehal" style="height:120px"><?= $mtr->capaian;?></textarea>
+                <textarea class="form-control" name="capaian" id="summernotehal" style="height:120px"><?= $mtr->capaian ?></textarea>
             </div>
 
             

@@ -16,7 +16,7 @@ class Materi extends CI_Controller{
         $data = array(
             'id_materi'    => set_value('id_materi'),
             'TM'    => set_value('TM'),
-            'materi'    => set_value('materi'),
+            'judul_materi'    => set_value('judul_materi'),
             'capaian'    => set_value('capaian'),
             'waktu'    => set_value('waktu'),
             'bulan'    => set_value('bulan'),
@@ -37,7 +37,7 @@ class Materi extends CI_Controller{
        $this->tambah_materi();
     } else {
             $TM = $this->input->post('TM', TRUE);
-            $materi = $this->input->post('materi', TRUE);
+            $judul_materi = $this->input->post('judul_materi', TRUE);
             $capaian = $this->input->post('capaian', TRUE);
             $waktu = $this->input->post('waktu', TRUE);
             $bulan = $this->input->post('bulan', TRUE);
@@ -46,7 +46,7 @@ class Materi extends CI_Controller{
         
             $data = array(
                 'TM' => $TM,
-                'materi' => $materi,
+                'judul_materi' => $judul_materi,
                 'capaian' => $capaian,
                 'waktu' => $waktu,
                 'bulan' => $bulan,
@@ -67,7 +67,7 @@ class Materi extends CI_Controller{
     public function _rules()
     {
         $this->form_validation->set_rules('TM','TM','required', ['required' => 'TM Wajib Diisi']);
-        $this->form_validation->set_rules('materi','materi','required' , ['required' => 'Materi Wajib Diisi']);
+        $this->form_validation->set_rules('judul_materi','judul_materi','required' , ['required' => 'Materi Wajib Diisi']);
         $this->form_validation->set_rules('capaian','capaian','required' , ['required' => 'Capaian Wajib Diisi']);
         $this->form_validation->set_rules('waktu','waktu','required', ['required' => 'Waktu Wajib Diisi']);
         $this->form_validation->set_rules('bulan','bulan','required', ['required' => 'bulan Wajib Diisi']);
@@ -88,7 +88,7 @@ class Materi extends CI_Controller{
     {
         $id = $this->input->post('id_materi');
         $TM = $this->input->post('TM');
-        $materi = $this->input->post('materi');
+        $judul_materi = $this->input->post('judul_materi');
         $capaian = $this->input->post('capaian');
         $waktu = $this->input->post('waktu');
         $bulan = $this->input->post('bulan');
@@ -96,7 +96,7 @@ class Materi extends CI_Controller{
         
 
         $this->form_validation->set_rules('TM','TM','required', ['required' => 'TM Wajib Diisi']);
-        $this->form_validation->set_rules('materi','materi','required' , ['required' => 'Materi Wajib Diisi']);
+        $this->form_validation->set_rules('judul_materi','judul_materi','required' , ['required' => 'Materi Wajib Diisi']);
         $this->form_validation->set_rules('capaian','capaian','required' , ['required' => 'Capaian Wajib Diisi']);
         $this->form_validation->set_rules('waktu','waktu','required', ['required' => 'Waktu Wajib Diisi']);
         $this->form_validation->set_rules('bulan','bulan','required', ['required' => 'bulan Wajib Diisi']);
@@ -115,7 +115,7 @@ class Materi extends CI_Controller{
 
         $data = array(
             'TM' => $TM,
-            'materi' => $materi,
+            'judul_materi' => $judul_materi,
             'capaian' => $capaian,
             'waktu' => $waktu,
             'bulan' => $bulan,

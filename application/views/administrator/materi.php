@@ -24,19 +24,19 @@
 
             <?php
             $no = 1;
-            foreach ($materi as $mtr) : ?>
+            foreach ($materi as $mti) : ?>
             <tr>
                 <td width="20px"><?php echo $no++ ?></td>
-                <td><?php echo $mtr->TM ?></td>
-                <td><?php echo $mtr->materi ?></td>
-                <td><?php echo $mtr->capaian ?></td>
-                <td><?php echo $mtr->waktu ?></td>
-                <td><?php echo $mtr->bulan ?></td>
-                <td><?php echo $mtr->minggu ?></td>
-                <td width="20px"><?php echo anchor('administrator/materi/update/'.$mtr->id_materi,'<div class="btn 
+                <td><?php echo $mti->TM ?></td>
+                <td><?php echo $mti->judul_materi ?></td>
+                <td><?php echo $mti->capaian ?></td>
+                <td><?php echo $mti->waktu ?></td>
+                <td><?php echo $mti->bulan ?></td>
+                <td><?php echo $mti->minggu ?></td>
+                <td width="20px"><?php echo anchor('administrator/materi/update/'.$mti->id_materi,'<div class="btn 
                     btn-sm btn-primary"><i class="fa 
                     fa-edit"></i></div>') ?></td>
-                <td width="20px"><?php echo anchor('administrator/materi/delete/'.$mtr->id_materi,'<div class="btn 
+                <td width="20px"><?php echo anchor('administrator/materi/delete/'.$mti->id_materi,'<div class="btn 
                     btn-sm btn-danger"><i class="fa 
                     fa-trash"></i></div>') ?></td>
             </tr>

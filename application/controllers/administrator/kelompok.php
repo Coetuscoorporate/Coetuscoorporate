@@ -138,15 +138,6 @@ class Kelompok extends CI_Controller{
                                         </div>');
         redirect('administrator/kelompok');
 
-        $data['kelompok'] = $this->db->query("select * from kelompok klp, jurusan jrs where klp.nama_jurusan=jrs.nama_jurusan and klp.id_kelompok='$id'")->result();
-
-        $data['Jurusan'] = $this->kelompok_model->tampil_data('jurusan')->result();
-
-        $this->load->view('templates_administrator/header');
-        $this->load->view('templates_administrator/sidebar');
-        $this->load->view('administrator/kelompok_update',$data);
-        $this->load->view('templates_administrator/footer');
-
     }
    
     public function delete($id)
