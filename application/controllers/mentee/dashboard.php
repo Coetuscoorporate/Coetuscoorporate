@@ -22,14 +22,13 @@ class Dashboard extends CI_Controller{
         $data = $this->user_model_mentee->ambil_data($this->session->userdata
             ['nim']);
         $data = array(
-            'nim'   => $data->nim,
+            'nim'            => $data->nim,
             'nama_lengkap'   => $data->nama_lengkap,
-            'level' => $data->level,
+            'level'          => $data->level,
         );
         $this->load->view('templates/ruanghijrah/header');
         $this->load->view('mentee/dashboard',$data);
         $this->load->view('templates/ruanghijrah/footer');
-
     }
 
 }

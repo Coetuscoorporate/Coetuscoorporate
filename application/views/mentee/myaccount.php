@@ -188,18 +188,66 @@
             
             <!-- Tampilkan informasi data mentee dalam tabel -->
             <table class="table">
+            <img class="mb-4" src="<?php echo base_url('assets/uploads/').$photo?>" style="width: 24%">
+
             <tr>
-                <td class="label-cell"><strong>Nama Mentee</strong></td>
-                <td>: Titi</td>
-            </tr>
-            <tr>
-                <td class="label-cell"><strong>Email</strong></td>
-                <td>: Titi@example.com</td>
+                <td class="label-cell"><strong>NIM</strong></td>
+                <td>: <?php echo $nim; ?></td>
             </tr>
             <tr>
                 <td class="label-cell"><strong>Password</strong></td>
-                <td>: ********</td>
+                <td>: <?php echo $password; ?></td>
             </tr>
+            <tr>
+                <td class="label-cell"><strong>Level</strong></td>
+                <td>: <?php echo $level; ?></td>
+            </tr>
+
+            <tr>
+                <td class="label-cell"><strong>Nama Lengkap</strong></td>
+                <td>: <?php echo $nama_lengkap; ?></td>
+            </tr>
+
+            <tr>
+                <td class="label-cell"><strong>Alamat</strong></td>
+                <td>: <?php echo $alamat; ?></td>
+            </tr>
+
+            <tr>
+                <td class="label-cell"><strong>Email</strong></td>
+                <td>: <?php echo $email; ?></td>
+            </tr>
+
+            <tr>
+                <td class="label-cell"><strong>Telepon</strong></td>
+                <td>: <?php echo $telepon; ?></td>
+            </tr>
+
+            <tr>
+                <td class="label-cell"><strong>Tempat Lahir</strong></td>
+                <td>: <?php echo $tempat_lahir; ?></td>
+            </tr>
+
+            <tr>
+                <td class="label-cell"><strong>Tanggal Lahir</strong></td>
+                <td>: <?php echo $tanggal_lahir; ?></td>
+            </tr>
+
+            <tr>
+                <td class="label-cell"><strong>Jenis Kelamin</strong></td>
+                <td>: <?php echo $jenis_kelamin; ?></td>
+            </tr>
+
+            <tr>
+                <td class="label-cell"><strong>Nama Kelompok</strong></td>
+                <td>: <?php echo $nama_kelompok; ?></td>
+            </tr>
+
+            <tr>
+                <td class="label-cell"><strong>Nama Jurusan</strong></td>
+                <td>: <?php echo $nama_jurusan; ?></td>
+            </tr>
+            
               <!-- Tambahkan baris lain jika diperlukan -->
             </table>
             <!-- Tampilkan informasi data mentee dalam tabel -->
