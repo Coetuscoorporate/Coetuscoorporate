@@ -174,16 +174,11 @@
         <!-- Tambahkan class "colored-box" untuk kotak dengan warna latar belakang yang berbeda -->
         <div class="h_blog_text full-width-box colored-box">
           <div class="h_blog_text_inner left right">
-            <h4>Profile</h4>
+            <h4>PROFILE</h4>
             <p>
               Subdue whales void god which living don't midst lesser
               yielding over lights whose. Cattle greater brought sixth fly
               den dry good tree isn't seed stars were.
-            </p>
-            <p>
-              Subdue whales void god which living don't midst lesser yieldi
-              over lights whose. Cattle greater brought sixth fly den dry
-              good tree isn't seed stars were the boring.
             </p>
             
             <!-- Tampilkan informasi data mentee dalam tabel -->
