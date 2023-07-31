@@ -16,6 +16,16 @@
         </tr>
 
         <tr>
+            <td>PASSWORD</td>
+            <td><?php echo $dt->password; ?></td>
+        </tr>
+
+        <tr>
+            <td>LEVEL</td>
+            <td><?php echo $dt->level; ?></td>
+        </tr>
+
+        <tr>
             <td>NAMA LENGKAP</td>
             <td><?php echo $dt->nama_lengkap; ?></td>
         </tr>
@@ -53,6 +63,11 @@
         <tr>
             <td>NAMA KELOMPOK</td>
             <td><?php echo $dt->nama_kelompok; ?></td>
+        </tr>
+
+        <tr>
+            <td>NAMA JURUSAN</td>
+            <td><?php echo $dt->nama_jurusan; ?></td>
         </tr>
 
         <?php endforeach; ?>

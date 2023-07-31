@@ -12,32 +12,31 @@ class Auth extends CI_Controller{
     public function proses_login_mentee()
     {
         //menentukan form validation harus wajib diisi
-        $this->form_validation->set_rules('username','Username','required',[
-            'required' => 'Username wajib diisi!'
+        $this->form_validation->set_rules('nim','Nim','required',[
+            'required' => 'NIM wajib diisi!'
     ]);
         $this->form_validation->set_rules('password','Password','required',[
             'required' => 'Password wajib diisi!'
     ]);
         if ($this->form_validation->run() == FALSE){
-            $this->load->view('templates/ruanghijrah/header');
             $this->load->view('mentee/login_mentee');
             $this->load->view('templates/ruanghijrah/footer');
         }else {
-            $username = $this->input->post('username');
+            $nim = $this->input->post('nim');
             $password = $this->input->post('password');
             
             //membuat variabel user, pass dan cek(untuk ke databse melalui model)
-            $user = $username;
+            $nim = $nim;
             $pass = MD5($password);
 
-            $cek = $this->login_model_mentee->cek_login($user, $pass);
+            $cek = $this->login_model_mentee->cek_login($nim, $pass);
             
             //jika input yang dimasukan sesuai akan dalihkan ke halaman dashboard administrator
             if ($cek->num_rows() > 0){
 
                 //membuat session untuk user pass dan email agar bisa di tampilkan
                 foreach ($cek->result() as $ck){
-                    $sess_data['username'] = $ck->username;
+                    $sess_data['nim'] = $ck->nim;
                     $sess_data['email'] = $ck->email;
                     $sess_data['level'] = $ck->level;
 
@@ -49,7 +48,7 @@ class Auth extends CI_Controller{
                 }else {//jika tidak sesuai akan di kembalikan ke halaman login
                         $this->session->set_flashdata('pesan','<div 
                         class="alert alert-danger alert-dismissible fade show" role="alert">
-                        Maaf Username atau Password Salah!
+                        Maaf NIM atau Password Salah!
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
@@ -59,10 +58,12 @@ class Auth extends CI_Controller{
 
             }else {
                 $this->session->set_flashdata('pesan','<div 
-                    class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">Maaf</h4>
-                    <p>Username atau Password Salah!</p>
-                    </div>');
+                class="alert alert-danger alert-dismissible fade show" role="alert">
+                Maaf NIM atau Password Salah!
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
                 redirect('mentee/auth');
             }
         }

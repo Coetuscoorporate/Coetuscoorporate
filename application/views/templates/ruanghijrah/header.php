@@ -67,8 +67,8 @@
               id="navbarSupportedContent"
             >
               <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo base_url('mentee/dashboard') ?>">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="about-us.html">About</a>
@@ -105,16 +105,16 @@
                     role="button"
                     aria-haspopup="true"
                     aria-expanded="false"
-                    >Blog</a
+                    >Account</a
                   >
                   <ul class="dropdown-menu">
                     <li class="nav-item">
-                      <a class="nav-link" href="blog.html">Blog</a>
+                      <a class="nav-link" href="<?php echo base_url('mentee/myaccount') ?>">My Account</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="single-blog.html"
-                        >Blog Details</a
-                      >
+                      <a class="nav-link" href="<?php echo base_url('mentee/auth/logout') ?>">
+                        <i class="fas fa-fw fa-sign-out-alt"></i>
+                        <span>Logout</span></a>
                     </li>
                   </ul>
                 </li>
