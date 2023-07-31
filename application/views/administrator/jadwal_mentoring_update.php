@@ -15,9 +15,11 @@
 
             <div class="form-group">
                 <label>Nama Mentor</label>
+                <input type="hidden" name="id_jadwal" value="<?php echo $jdl-> id_jadwal?>">
                 <select name="nama_mentor" class="form-control">
                         <option value="<?php echo $jdl->nama_mentor?>"><?php echo $jdl->nama_mentor ?></option>
                             <?php foreach ($mentor as $mtr) : ?>
+                                
                                 <option value="<?php echo $mtr->nama_mentor ?>"><?php echo $mtr->nama_mentor;?></option>
                             <?php endforeach; ?>
                 </select>

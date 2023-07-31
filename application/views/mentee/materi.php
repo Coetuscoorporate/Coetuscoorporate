@@ -102,10 +102,10 @@
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <div class="banner_content text-center">
-            <h2>My Account</h2>
+            <h2>Materi</h2>
             <div class="page_link">
               <a href="index.html">Home</a>
-              <a href="about-us.html">My Account</a>
+              <a href="about-us.html">Materi</a>
             </div>
           </div>
         </div>
@@ -124,73 +124,38 @@
         <!-- Tambahkan class "colored-box" untuk kotak dengan warna latar belakang yang berbeda -->
         <div class="h_blog_text full-width-box colored-box">
           <div class="h_blog_text_inner left right">
-            <h4>PROFILE</h4>
+            <h4>MATERI</h4>
            
             
             <!-- Tampilkan informasi data mentee dalam tabel -->
-            <table class="table">
-            <img class="mb-4" src="<?php echo base_url('assets/uploads/').$photo?>" style="width: 24%">
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <th>NO</th>
+                    <th>TM</th>
+                    <th>NAMA MATERI</th>
+                    <th>CAPAIAN</th>
+                    <th>WAKTU</th>
+                    <th>BULAN</th>
+                    <th>MINGGU</th>
+                    
+                </tr>
 
+            <?php
+            $no = 1;
+            foreach ($materi as $mti) : ?>
             <tr>
-                <td class="label-cell"><strong>NIM</strong></td>
-                <td>: <?php echo $nim; ?></td>
+                <td width="20px"><?php echo $no++ ?></td>
+                <td><?php echo $mti->TM ?></td>
+                <td><?php echo $mti->judul_materi ?></td>
+                <td><?php echo $mti->capaian ?></td>
+                <td><?php echo $mti->waktu ?></td>
+                <td><?php echo $mti->bulan ?></td>
+                <td><?php echo $mti->minggu ?></td>
+                
             </tr>
-            <tr>
-                <td class="label-cell"><strong>Password</strong></td>
-                <td>: <?php echo $password; ?></td>
-            </tr>
-            <tr>
-                <td class="label-cell"><strong>Level</strong></td>
-                <td>: <?php echo $level; ?></td>
-            </tr>
+            <?php endforeach; ?>
+    </table>
 
-            <tr>
-                <td class="label-cell"><strong>Nama Lengkap</strong></td>
-                <td>: <?php echo $nama_lengkap; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Alamat</strong></td>
-                <td>: <?php echo $alamat; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Email</strong></td>
-                <td>: <?php echo $email; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Telepon</strong></td>
-                <td>: <?php echo $telepon; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Tempat Lahir</strong></td>
-                <td>: <?php echo $tempat_lahir; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Tanggal Lahir</strong></td>
-                <td>: <?php echo $tanggal_lahir; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Jenis Kelamin</strong></td>
-                <td>: <?php echo $jenis_kelamin; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Nama Kelompok</strong></td>
-                <td>: <?php echo $nama_kelompok; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Nama Jurusan</strong></td>
-                <td>: <?php echo $nama_jurusan; ?></td>
-            </tr>
-            
-              <!-- Tambahkan baris lain jika diperlukan -->
-            </table>
             <!-- Tampilkan informasi data mentee dalam tabel -->
             
            

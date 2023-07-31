@@ -14,7 +14,9 @@
         
             <div class="form-group">
                 <label>Kode Kelompok</label>
+                
                 <input type="hidden" name="id_kelompok" value="<?php echo $klp->id_kelompok ?>">
+
                 <input type="text" name="kode_kelompok" class="form-control" value="<?php echo $klp->kode_kelompok ?>">
             </div>
 

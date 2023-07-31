@@ -8,12 +8,25 @@
     <?php foreach($mentor as $mtr) : ?>
     <?php echo form_open_multipart('administrator/mentor/update_mentor_aksi') ?>
     <?php echo $this->session->flashdata('pesan'); ?>
+    
 
+    <div class="form-group">
+        <label>Password</label>
+        <input type="hidden" name="id" class="form-control" value="<?php echo $mtr->id ?>">
+        <input type="text" name="password" class="form-control" value="<?php echo $mtr->password ?>">
+        <?php echo form_error('password','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
+
+    <div class="form-group">
+        <label>Level</label>
+        <input type="text" name="level" class="form-control" value="<?php echo $mtr->level ?>">
+        <?php echo form_error('level','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
 
     <div class="form-group">
         <label>Nama Mentor</label>
         <input type="text" name="nama_mentor" class="form-control" value="<?php echo $mtr->nama_mentor ?>">
-        <?php echo form_error('nama_mentor','<div class="text-danger small ml-3">','</div>') ?>
+        <?php echo form_error('nama_lengkap','<div class="text-danger small ml-3">','</div>') ?>
     </div>
 
     <div class="form-group">
@@ -64,6 +77,8 @@
         </select>
         <?php echo form_error('nama_kelompok','<div class="text-danger small ml-3">','</div>') ?>
     </div>
+
+    
 
     <div class="form-group">
 

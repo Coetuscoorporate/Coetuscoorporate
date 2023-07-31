@@ -10,7 +10,15 @@
             
         <img class="mb-4" src="<?php echo base_url('assets/uploads/').$dt->photo ?>" style="width: 24%">
 
-       
+        <tr>
+            <td>NIM</td>
+            <td><?php echo $dt->nim; ?></td>
+        </tr>
+
+        <tr>
+            <td>PASSWORD</td>
+            <td><?php echo $dt->password; ?></td>
+        </tr>
 
         <tr>
             <td>NAMA LENGKAP</td>

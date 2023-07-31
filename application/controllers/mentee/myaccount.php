@@ -38,5 +38,38 @@ class Myaccount extends CI_Controller{
         );
         $this->load->view('mentee/myaccount',$data);
         $this->load->view('templates/ruanghijrah/footer');
+
+     
     }
+
+    public function Jadwal_mentoring()
+    {
+
+        $data = $this->myaccount_model_mentee->jadwal_mentoring($this->session->userdata['nama_kelompok']);
+        $data = array(
+            'nama_mentor'            => $data->nama_mentor,
+            'judul_materi'   => $data->judul_materi,
+            'nama_kelompok'          => $data->nama_kelompok,
+            'waktu'          => $data->waktu,
+            'Tempat'          => $data->Tempat,
+            
+        );
+        $this->load->view('mentee/jadwal_mentee',$data);
+        $this->load->view('templates/ruanghijrah/footer');
+    }
+
+    public function materi()
+    {
+
+        $data['materi'] = $this->myaccount_model_mentee->materi()->result();
+        
+        
+       
+
+        $this->load->view('mentee/materi',$data);
+        $this->load->view('templates/ruanghijrah/footer');
+    }
+    
+
+
 }

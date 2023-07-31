@@ -4,24 +4,26 @@
         <i class=" fas fa-clipboard-list"></i> Form Update Materi
     </div>
 
-    <?php foreach($materi as $mtr) : ?>
+    <?php foreach($materi as $mti) : ?>
 
         <form method="post" action="<?php echo base_url('administrator/materi/update_aksi') ?>">
         <?php echo $this->session->flashdata('pesan'); ?>
+
             <div class="form-group">
                 
                 <label>TM</label>
-                <input type="text" name="TM" class="form-control" value="<?php echo $mtr->TM ?>">
+                <input type="hidden" name="id_materi" value="<?php echo $mti->id_materi ?>">
+                <input type="text" name="TM" class="form-control" value="<?php echo $mti->TM ?>">
             </div>
 
             <div class="form-group">
                 <label>Judul Materi</label>
-                <input type="text" name="judul_materi" class="form-control" value="<?php echo $mtr->judul_materi ?>">
+                <input type="text" name="judul_materi" class="form-control" value="<?php echo $mti->judul_materi ?>">
             </div>
 
             <div class="form-group">
                 <label>Pencapaian</label>
-                <textarea class="form-control" name="capaian" id="summernotehal" style="height:120px"><?= $mtr->capaian ?></textarea>
+                <textarea class="form-control" name="capaian" id="summernotehal" style="height:120px"><?= $mti->capaian ?></textarea>
             </div>
 
             
@@ -29,8 +31,8 @@
             <div class="form-group">
                 <label>Waktu</label>
                 <select name="waktu" class="form-control">
-                    <option value="<?php echo $mtr->waktu?>"><?php echo $mtr->waktu ?></option>
-                        <?php foreach ($materi as $mtr) : ?>
+                    <option value="<?php echo $mti->waktu?>"><?php echo $mti->waktu ?></option>
+                        <?php foreach ($materi as $mti) : ?>
                             <option>Pekan ke 4 Januari</option>
                             <option>Pekan ke 4 Februari</option>
                             <option>Pekan ke 4 Maret</option>
@@ -51,8 +53,8 @@
             <div class="form-group">
                 <label>Bulan</label>
                 <select name="bulan" class="form-control">
-                    <option value="<?php echo $mtr->bulan?>"><?php echo $mtr->bulan ?></option>
-                        <?php foreach ($materi as $mtr) : ?>
+                    <option value="<?php echo $mti->bulan?>"><?php echo $mti->bulan ?></option>
+                        <?php foreach ($materi as $mti) : ?>
                             <option>Januari</option>
                             <option>Februari</option>
                             <option>Maret</option>
@@ -73,8 +75,8 @@
             <div class="form-group">
                 <label>Minggu</label>
                 <select name="minggu" class="form-control">
-                    <option value="<?php echo $mtr->minggu?>"><?php echo $mtr->minggu ?></option>
-                        <?php foreach ($materi as $mtr) : ?>
+                    <option value="<?php echo $mti->minggu?>"><?php echo $mti->minggu ?></option>
+                        <?php foreach ($materi as $mti) : ?>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>

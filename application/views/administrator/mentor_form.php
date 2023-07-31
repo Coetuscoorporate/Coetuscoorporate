@@ -6,12 +6,27 @@
 
     <?php echo form_open_multipart('administrator/mentor/tambah_mentor_aksi') ?>
     <?php echo $this->session->flashdata('pesan'); ?>
-   
+    
 
     <div class="form-group">
-        <label>Nama Lengkap</label>
-        <input type="text" name="nama_mentor" class="form-control">
-        <?php echo form_error('nama_mentor','<div class="text-danger small ml-3">','</div>') ?>
+        <label>Password</label>
+        <input type="text" name="password" class="form-control">
+        <?php echo form_error('password','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
+
+    <div class="form-group">
+        <label>Level</label>
+        <select name="level" class="form-control">
+            <option value="">-- Pilih Level --</option>
+            <option>mentor</option>
+        </select>
+        <?php echo form_error('level','<div class="text-danger small ml-3">','</div>') ?>
+    </div>
+
+    <div class="form-group">
+        <label>Nama Mentor</label>
+        <input type="text" name="nama_lengkap" class="form-control">
+        <?php echo form_error('nama_lengkap','<div class="text-danger small ml-3">','</div>') ?>
     </div>
 
     <div class="form-group">
@@ -64,6 +79,8 @@
         </select>
         <?php echo form_error('nama_kelompok','<div class="text-danger small ml-3">','</div>') ?>
     </div>
+
+
 
     <div class="form-group">
         <label>Foto</label><br>

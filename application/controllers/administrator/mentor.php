@@ -6,6 +6,7 @@ class Mentor extends CI_Controller{
     {
         $data['mentor'] = $this->mentor_model->tampil_data('mentor')->result();
         $data['kelompok'] = $this->kelompok_model->tampil_data('kelompok')->result();
+       
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/mentor',$data);
@@ -24,6 +25,7 @@ class Mentor extends CI_Controller{
     public function tambah_mentor()
     {
         $data['kelompok'] = $this->mentor_model->tampil_data('kelompok')->result();
+        
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
         $this->load->view('administrator/mentor_form',$data);
@@ -39,7 +41,9 @@ class Mentor extends CI_Controller{
         } else {
             
 
-          
+        
+            $password      = MD5($this->input->post('password'));
+            $level         = $this->input->post('level');
             $nama_mentor  = $this->input->post('nama_mentor');
             $alamat        = $this->input->post('alamat');
             $email         = $this->input->post('email');
@@ -48,6 +52,7 @@ class Mentor extends CI_Controller{
             $tanggal_lahir = $this->input->post('tanggal_lahir');
             $jenis_kelamin = $this->input->post('jenis_kelamin');
             $nama_kelompok = $this->input->post('nama_kelompok');
+            
             $photo         = $_FILES['photo'];
             if ($photo == '') {
             } else {
@@ -64,7 +69,9 @@ class Mentor extends CI_Controller{
             }
 
             $data = array(
-            
+                
+                'password'      => $password,
+                'level'         => $level,
                 'nama_mentor'  => $nama_mentor,
                 'alamat'        => $alamat,
                 'email'         => $email,
@@ -73,6 +80,7 @@ class Mentor extends CI_Controller{
                 'tanggal_lahir' => $tanggal_lahir,
                 'jenis_kelamin' => $jenis_kelamin,
                 'nama_kelompok' => $nama_kelompok,
+               
                 'photo'         => $photo
             );
 
@@ -94,6 +102,7 @@ class Mentor extends CI_Controller{
         $where = array('$id' => $id);
         $data['mentor'] = $this->db->query("select * from mentor mtr, kelompok klp where mtr.nama_kelompok=klp.nama_kelompok and mtr.id='$id'")->result();
         $data['kelompok'] = $this->kelompok_model->tampil_data('kelompok')->result();
+      
         $data['detail'] = $this->mentor_model->ambil_id_mentor($id);
         $this->load->view('templates_administrator/header');
         $this->load->view('templates_administrator/sidebar');
@@ -104,6 +113,9 @@ class Mentor extends CI_Controller{
     public function update_mentor_aksi()
     {
         $id            = $this->input->post("id");
+       
+        $password      = MD5($this->input->post('password'));
+        $level         = $this->input->post('level');
         $nama_mentor  = $this->input->post('nama_mentor');
         $alamat        = $this->input->post('alamat');
         $email         = $this->input->post('email');
@@ -112,9 +124,10 @@ class Mentor extends CI_Controller{
         $tanggal_lahir = $this->input->post('tanggal_lahir');
         $jenis_kelamin = $this->input->post('jenis_kelamin');
         $nama_kelompok = $this->input->post('nama_kelompok');
+    
         $photo         = $_FILES['userfile']['name'];
 
-       
+     
 
         // Validasi telepon (harus berisi angka)
         if (!is_numeric($telepon)) {
@@ -129,11 +142,10 @@ class Mentor extends CI_Controller{
         }
 
         // Validasi nama Mentor (hanya huruf)
-        if (!preg_match("/^[a-zA-Z ]*$/", $nama_mentor)) {
+        if (!preg_match("/^[a-zA-Z ]*$/", $nama_Mentor)) {
             $this->session->set_flashdata('pesan', '<div 
                 class="alert alert-danger alert-dismissible fade show" role="alert">
-                Nama Mentor hanya boleh berisi huruf!
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                Nama Mentor type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>');
@@ -168,6 +180,8 @@ class Mentor extends CI_Controller{
 
         $data = array(
             
+            'password'      => $password,
+            'level'         => $level,
             'nama_mentor'  => $nama_mentor,
             'alamat'        => $alamat,
             'email'         => $email,
@@ -175,7 +189,8 @@ class Mentor extends CI_Controller{
             'tempat_lahir'  => $tempat_lahir,
             'tanggal_lahir' => $tanggal_lahir,
             'jenis_kelamin' => $jenis_kelamin,
-            'nama_kelompok' => $nama_kelompok
+            'nama_kelompok' => $nama_kelompok,
+           
         );
 
         $where = array (
@@ -197,6 +212,8 @@ class Mentor extends CI_Controller{
     public function _rules()
     {
        
+        $this->form_validation->set_rules('password', 'Password', 'required', ['required' => 'Password wajib diisi!']);
+        $this->form_validation->set_rules('level', 'Level', 'required', ['required' => 'Level wajib diisi!']);
         $this->form_validation->set_rules('nama_mentor', 'Nama Mentor', 'required|alpha', [
             'required' => 'Nama Mentor wajib diisi!',
             'alpha'    => 'Nama Mentor hanya boleh berisi huruf!'
@@ -214,5 +231,6 @@ class Mentor extends CI_Controller{
         $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required', ['required' => 'Tanggal Lahir wajib diisi!']);
         $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required', ['required' => 'Jenis Kelamin wajib diisi!']);
         $this->form_validation->set_rules('nama_kelompok', 'Nama Kelompok', 'required', ['required' => 'Nama Kelompok wajib diisi!']);
+      
     }
 }

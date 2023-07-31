@@ -70,33 +70,8 @@
                 <li class="nav-item">
                   <a class="nav-link" href="<?php echo base_url('mentee/dashboard') ?>">Home</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about-us.html">About</a>
-                </li>
-                <li class="nav-item submenu dropdown">
-                  <a
-                    href="#"
-                    class="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    >Pages</a
-                  >
-                  <ul class="dropdown-menu">
-                    <li class="nav-item">
-                      <a class="nav-link" href="courses.html">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="course-details.html"
-                        >Course Details</a
-                      >
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="elements.html">Elements</a>
-                    </li>
-                  </ul>
-                </li>
+               
+                
                 <li class="nav-item submenu dropdown">
                   <a
                     href="#"
@@ -112,15 +87,19 @@
                       <a class="nav-link" href="<?php echo base_url('mentee/myaccount') ?>">My Account</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url('mentee/myaccount/Jadwal_mentoring') ?>">Jawal Mentoring</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url('mentee/myaccount/materi') ?>">Materi</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="<?php echo base_url('mentee/auth/logout') ?>">
                         <i class="fas fa-fw fa-sign-out-alt"></i>
                         <span>Logout</span></a>
                     </li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
-                </li>
+                
                 <li class="nav-item">
                   <a href="#" class="nav-link search" id="search">
                     <i class="ti-search"></i>

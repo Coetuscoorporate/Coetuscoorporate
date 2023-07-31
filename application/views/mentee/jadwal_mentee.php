@@ -102,10 +102,10 @@
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <div class="banner_content text-center">
-            <h2>My Account</h2>
+            <h2>Jadwal Mentoring</h2>
             <div class="page_link">
               <a href="index.html">Home</a>
-              <a href="about-us.html">My Account</a>
+              <a href="about-us.html">Jadwal Mentoring</a>
             </div>
           </div>
         </div>
@@ -117,6 +117,8 @@
 
 
 <!--================ Start About Area =================-->
+
+
 <section class="about_area section_gap">
   <div class="container">
     <div class="row justify-content-center">
@@ -124,76 +126,45 @@
         <!-- Tambahkan class "colored-box" untuk kotak dengan warna latar belakang yang berbeda -->
         <div class="h_blog_text full-width-box colored-box">
           <div class="h_blog_text_inner left right">
-            <h4>PROFILE</h4>
-           
+            <h4>JADWAL MENTORING</h4>
+            <p>
+              Berikut Jadwal Mentoring :
+            </p>
             
             <!-- Tampilkan informasi data mentee dalam tabel -->
             <table class="table">
-            <img class="mb-4" src="<?php echo base_url('assets/uploads/').$photo?>" style="width: 24%">
 
             <tr>
-                <td class="label-cell"><strong>NIM</strong></td>
-                <td>: <?php echo $nim; ?></td>
+                <td class="label-cell"><strong>Mentor</strong></td>
+                <td>: <?php echo $nama_mentor; ?></td>
             </tr>
             <tr>
-                <td class="label-cell"><strong>Password</strong></td>
-                <td>: <?php echo $password; ?></td>
+                <td class="label-cell"><strong>Judul Materi</strong></td>
+                <td>: <?php echo $judul_materi; ?></td>
             </tr>
-            <tr>
-                <td class="label-cell"><strong>Level</strong></td>
-                <td>: <?php echo $level; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Nama Lengkap</strong></td>
-                <td>: <?php echo $nama_lengkap; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Alamat</strong></td>
-                <td>: <?php echo $alamat; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Email</strong></td>
-                <td>: <?php echo $email; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Telepon</strong></td>
-                <td>: <?php echo $telepon; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Tempat Lahir</strong></td>
-                <td>: <?php echo $tempat_lahir; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Tanggal Lahir</strong></td>
-                <td>: <?php echo $tanggal_lahir; ?></td>
-            </tr>
-
-            <tr>
-                <td class="label-cell"><strong>Jenis Kelamin</strong></td>
-                <td>: <?php echo $jenis_kelamin; ?></td>
-            </tr>
-
             <tr>
                 <td class="label-cell"><strong>Nama Kelompok</strong></td>
                 <td>: <?php echo $nama_kelompok; ?></td>
             </tr>
 
             <tr>
-                <td class="label-cell"><strong>Nama Jurusan</strong></td>
-                <td>: <?php echo $nama_jurusan; ?></td>
+                <td class="label-cell"><strong>Waktu</strong></td>
+                <td>: <?php echo $waktu; ?></td>
             </tr>
-            
+
+            <tr>
+                <td class="label-cell"><strong>Tempat</strong></td>
+                <td>: <?php echo $Tempat; ?></td>
+            </tr>
+
+           
               <!-- Tambahkan baris lain jika diperlukan -->
             </table>
             <!-- Tampilkan informasi data mentee dalam tabel -->
             
-           
+            <a class="primary-btn" href="#">
+              Learn More <i class="ti-arrow-right ml-1"></i>
+            </a>
           </div>
         </div>
         <!-- Tambahkan class "colored-box" untuk kotak dengan warna latar belakang yang berbeda -->
@@ -201,9 +172,6 @@
     </div>
   </div>
 </section>
-
-
-
 
 
 <!--================ End About Area =================-->
